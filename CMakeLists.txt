@@ -28,6 +28,8 @@ if(MSVC)
     add_definitions(-DBOOST_DATE_TIME_NO_LIB)
 endif()
 
+find_package(Boost 1.74.0 COMPONENTS date_time) 
+
 find_package(OpenSSL 1.1.0 REQUIRED)
 target_include_directories(trojan PRIVATE ${OPENSSL_INCLUDE_DIR})
 target_link_libraries(trojan ${OPENSSL_LIBRARIES})

@@ -16,7 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+#ifdef _MSC_VER
+#   define WIN32_LEAN_AND_MEAN
+#endif
 #include "authenticator.h"
 #include <cstdlib>
 #include <stdexcept>
