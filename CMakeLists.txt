@@ -21,6 +21,8 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 target_link_libraries(trojan ${CMAKE_THREAD_LIBS_INIT})
 
+#set(Boost_DEBUG ON)
+set(Boost_LIB_PREFIX "lib")
 find_package(Boost 1.66.0 REQUIRED COMPONENTS system program_options)
 target_include_directories(trojan PRIVATE ${Boost_INCLUDE_DIR})
 target_link_libraries(trojan ${Boost_LIBRARIES})
@@ -28,7 +30,7 @@ if(MSVC)
     add_definitions(-DBOOST_DATE_TIME_NO_LIB)
 endif()
 
-find_package(Boost 1.74.0 COMPONENTS date_time) 
+find_package(Boost 1.66.0 COMPONENTS date_time) 
 
 find_package(OpenSSL 1.1.0 REQUIRED)
 target_include_directories(trojan PRIVATE ${OPENSSL_INCLUDE_DIR})

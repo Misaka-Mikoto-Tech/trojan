@@ -24,6 +24,13 @@
 #include <boost/version.hpp>
 #include <openssl/opensslv.h>
 #ifdef ENABLE_MYSQL
+#ifdef _MSC_VER
+#   ifdef _WIN64
+#       include <WinSock2.h>
+#   elif _WIN32
+#       include <winsock.h>
+#   endif
+#endif
 #include <mysql.h>
 #endif // ENABLE_MYSQL
 #include "core/service.h"
