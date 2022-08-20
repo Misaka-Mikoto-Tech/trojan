@@ -12,7 +12,7 @@ else()
     add_definitions(-Wall -Wextra)
 endif()
 
-file(GLOB_RECURSE CPP_LIST src/*.cpp)
+file(GLOB_RECURSE CPP_LIST src/*.cpp src/*.h)
 
 add_executable(trojan ${CPP_LIST})
 target_include_directories(trojan PRIVATE src)
